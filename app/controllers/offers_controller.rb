@@ -1,9 +1,11 @@
 class OffersController < ApplicationController
+
   def index
     @offer = Offer.all
   end
 
   def show
+    @offer = Offer.find(params[:id])
   end
 
   def new
@@ -11,9 +13,12 @@ class OffersController < ApplicationController
   end
 
   def create
-    offer = Offer.new(offer_params)
-    offer.save
-    redirect_to offers_path(@offer)
+    @offer = Offer.new(offer_params)
+    if @offer.save
+      redirect_to offers_path(@offer)
+    else
+      render :new, status: :unprocessable_entitiy
+    end
   end
 
   private
