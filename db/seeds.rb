@@ -11,7 +11,7 @@ puts "Cleaning database..."
 Offer.destroy_all
 User.destroy_all
 puts "Creating users..."
-user_1 = User.new(email: 'user1@example.com', password: 'password123', first_name: 'Maïwenn', last_name: 'Berthot', created_at: Time.now, updated_at: Time.now)
+user_1 = User.new(email: 'user1@example.com', password: 'password123', first_name: 'Maïwenn', last_name: 'Bertho', created_at: Time.now, updated_at: Time.now)
 user_2 = User.new(email: 'user2@example.com', password: 'password232', first_name: 'Andy', last_name: 'de Cock', created_at: Time.now, updated_at: Time.now)
 user_3 = User.new(email: 'user3@example.com', password: 'password345', first_name: 'Victoria', last_name: 'Paranina', created_at: Time.now, updated_at: Time.now)
 user_4 = User.new(email: 'user4@example.com', password: 'password476', first_name: 'Emma', last_name: 'Cauty', created_at: Time.now, updated_at: Time.now)

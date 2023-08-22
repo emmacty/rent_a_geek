@@ -2,36 +2,65 @@
 <html>
 <head>
   <title>User Profile</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="profile-container">
-    <div class="profile-card">
-      <div class="profile-image">
-        <%= cl_image_tag @offer.user.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="container mt-5">
+    <div class="d-flex align-items-start">
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-body text-center">
+            <div class="profile-image">
+              <%= cl_image_tag @offer.user.photo.key, height: 300, width: 300, crop: :fill, class: "rounded-circle" %>
+            </div>
+            <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
+            <p><%= @offer.title %></p>
+            <p>Price: <%= @offer.price %></p>
+          </div>
+        </div>
       </div>
-      <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
-      <p><%= @offer.title %></p>
-      <p>Price: <%= @offer.price %></p>
+
+      <div class="col-md-8">
+        <div class="d-flex">
+          <div class="col-md-6">
+            <div class="card shadow">
+              <div class="card-body">
+                <h3>Date</h3>
+                <p><%= @offer.date %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card shadow">
+              <div class="card-body">
+                <h3>Location</h3>
+                <p><%= @offer.localisation %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 mt-3">
+          <div class="card shadow">
+            <div class="card-body">
+              <h3>Description</h3>
+              <p><%= @offer.description %> </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="info-card">
-      <h3>Date</h3>
-      <p><%= @offer.date %></p>
-    </div>
-
-    <div class="info-card">
-      <h3>Location</h3>
-      <p><%= @offer.localisation %></p>
-    </div>
-
-    <div class="description-card">
-      <h3>Description</h3>
-      <p><%= @offer.description %></p>
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "btn btn-primary btn-shadow", style: "background-color: #e60e05;" %>
+      </div>
     </div>
   </div>
-    <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "create-button" %>
 
+  <!-- Include Bootstrap JS (optional) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
