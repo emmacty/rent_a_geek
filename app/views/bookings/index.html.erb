@@ -1,6 +1,6 @@
 <h1>My bookings</h1>
 
-<h2>My geeks</h2>
+<h2 class="booking-title">My geeks</h2>
 <% @my_geeks.each do |geek| %>
   <p><%= geek.offer.user.first_name %> <%= geek.offer.user.last_name %></p>
   <p><%= geek.offer.title %></p>
