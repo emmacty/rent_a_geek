@@ -1,18 +1,19 @@
 .button {
   width: 206px;
   height: 63px;
-  background-color: #F0544F; /* Color same as title */
+  display: inline-block;
+  background-color: #F0544F;
   border-radius: 20px;
   color: white;
   font-weight: bold;
   text-align: center;
-  line-height: 63px; /* Vertically center the text */
-  cursor: pointer; /* Add a pointer cursor on hover */
-  border: none; /* Remove default button border */
-  outline: none; /* Remove button outline on focus */
-  transition: background-color 0.3s; /* Add a smooth transition for background color */
+  line-height: 63px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s;
 }
 
 .custom-button:hover {
-  background-color: #F0544F; /* Change background color on hover (if desired) */
+  background-color: #F0544F;
 }
