@@ -11,7 +11,7 @@ puts "Cleaning database..."
 Offer.destroy_all
 User.destroy_all
 puts "Creating users..."
-user_1 = User.new(email: 'user1@example.com', password: 'password123', first_name: 'Maïwenn', last_name: 'Berthot', created_at: Time.now, updated_at: Time.now)
+user_1 = User.new(email: 'user1@example.com', password: 'password123', first_name: 'Maïwenn', last_name: 'Bertho', created_at: Time.now, updated_at: Time.now)
 user_2 = User.new(email: 'user2@example.com', password: 'password232', first_name: 'Andy', last_name: 'de Cock', created_at: Time.now, updated_at: Time.now)
 user_3 = User.new(email: 'user3@example.com', password: 'password345', first_name: 'Victoria', last_name: 'Paranina', created_at: Time.now, updated_at: Time.now)
 user_4 = User.new(email: 'user4@example.com', password: 'password476', first_name: 'Emma', last_name: 'Cauty', created_at: Time.now, updated_at: Time.now)
@@ -54,7 +54,6 @@ Offer.create!(
   description: 'Experienced Ruby on Rails developer available for freelance projects in Lyon, France.',
   title: 'Ruby on Rails Developer',
   date: Date.today,
-  status: 'Available',
   experience: 5,
   profession: 'Web Developer',
   localisation: 'Lyon, France'
@@ -66,7 +65,7 @@ Offer.create!(
   description: 'Skilled front-end developer seeking remote work opportunities.',
   title: 'Front-End Developer',
   date: Date.today,
-  status: 'Available',
+
   experience: 3,
   profession: 'Web Developer',
   localisation: 'Marseille, France'
@@ -78,7 +77,7 @@ Offer.create!(
   description: 'Backend developer with expertise in database design and optimization.',
   title: 'Backend Developer',
   date: Date.today,
-  status: 'Available',
+
   experience: 6,
   profession: 'Web Developer',
   localisation: 'Paris, France'
@@ -90,7 +89,7 @@ Offer.create!(
   description: 'React.js expert available for contract work on web applications.',
   title: 'React.js Developer',
   date: Date.today,
-  status: 'Available',
+
   experience: 4,
   profession: 'Web Developer',
   localisation: 'Toulouse, France'
@@ -102,7 +101,7 @@ Offer.create!(
   description: 'UI/UX designer passionate about creating user-friendly interfaces.',
   title: 'UI/UX Designer',
   date: Date.today,
-  status: 'Available',
+
   experience: 5,
   profession: 'Designer',
   localisation: 'Bordeaux, France'
@@ -114,7 +113,7 @@ Offer.create!(
   description: 'DevOps engineer specializing in automation and CI/CD pipelines.',
   title: 'DevOps Engineer',
   date: Date.today,
-  status: 'Available',
+
   experience: 7,
   profession: 'DevOps',
   localisation: 'Nice, France'
