@@ -1,13 +1,16 @@
 <h1>My bookings</h1>
+
+<h2>My geeks</h2>
+<% @my_geeks.each do |geek| %>
+  <p><%= geek.offer.user.first_name %> <%= geek.offer.user.last_name %></p>
+  <p><%= geek.offer.title %></p>
+  <p><%= geek.offer.description %></p>
+  <p>Reserved for: <%= geek.offer.date%></p>
+<% end %>
+
+<h2>My missions</h2>
 <% @bookings.each do |booking| %>
-    <% if booking.offer.user.id != current_user.id %>
-    <h2>My geeks</h2>
-    <p><%= booking.offer.user.first_name %> <%= booking.offer.user.last_name %></p>
-    <p><%= booking.offer.title %></p>
-    <p><%= booking.offer.description %></p>
-    <p>Reserved for: <%= booking.offer.date%></p>
-  <% else %>
-    <h2>My missions</h2>
+    <% if booking.offer.user.id == current_user.id %>
     <p>You will be working for <%= booking.user.first_name %> <%= booking.user.last_name %></p>
     <p>On <%= booking.offer.date %></p>
   <% end %>
