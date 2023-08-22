@@ -11,20 +11,27 @@
   </div>
 <% end %>
 
-<div class="card" style="width: 18rem;">
-  <%# <img src="https://avatars.githubusercontent.com/u/139124191?v=4" class="card-img-top" alt="Test" width=200px> %>
-  <div class="image-elements">
-    <i class="fa-solid fa-heart"></i>
+<% @offers.each do |offer|%>
+  <div class="card" style="width: 18rem;">
+    <%= cl_image_tag offer.user.photo.key %>
+    <div class="image-elements">
+      <i class="fa-solid fa-heart"></i>
 
-    <p>Nom Prénom</p>
-    <hr>
-  </div>
-  <div class="card-body">
-    <%= link_to "Price", "/offers/new" %>
-    <div class="title">
-      <h5 class="card-title">Title</h5>
+      <h2><%= offer.user.first_name %> <%= offer.user.last_name %></h2>
+      <h5><i class="fa-solid fa-location-dot"></i><%= offer.localisation %></h5>
+
+      <hr>
     </div>
-    <p class="card-text">This is a description</p>
-    <a href="#" class="btn btn-primary">View offer page</a>
+    <div class="card-body">
+      <p>Price: <%= offer.price %>€</p>
+
+      <div class="title">
+        <h5 class="card-title"><%= offer.title %></h5>
+      </div>
+      <p class="card-text"><%= offer.description %></p>
+      <a href="#" class="btn btn-primary">View offer page</a>
+      <%= offer.date %>
+    </div>
   </div>
-</div>
+<% end %>
+<%= link_to "New", "/offers/new" %>
