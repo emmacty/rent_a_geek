@@ -2,7 +2,8 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
-    @my_geeks = Booking.where(user_id: current_user.id)
+    @my_geeks = current_user.bookings
+    @my_missions = current_user.missions
   end
 
   def just_booked

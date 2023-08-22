@@ -9,9 +9,9 @@
 <% end %>
 
 <h2>My missions</h2>
-<% @bookings.each do |booking| %>
-    <% if booking.offer.user.id == current_user.id %>
-    <p>You will be working for <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-    <p>On <%= booking.offer.date %></p>
+<% @my_missions.each do |mission| %>
+    <% if mission.offer.user.id == current_user.id %>
+    <p>You will be working for <%= mission.user.first_name %> <%= mission.user.last_name %></p>
+    <p>On <%= mission.offer.date %></p>
   <% end %>
 <% end %>
