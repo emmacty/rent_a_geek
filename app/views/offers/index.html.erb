@@ -12,19 +12,24 @@
 <% end %>
 
 <div class="card" style="width: 18rem;">
-  <%# <img src="https://avatars.githubusercontent.com/u/139124191?v=4" class="card-img-top" alt="Test" width=200px> %>
-  <div class="image-elements">
-    <i class="fa-solid fa-heart"></i>
+    <div class="image-elements">
+      <%# <%= cl_image_tag @offer.user.photo.key, height: 300, width: 400, crop: :fill %> %>
+      <i class="fa-solid fa-heart"></i>
+      <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
 
-    <p>Nom Prénom</p>
     <hr>
   </div>
+
   <div class="card-body">
-    <%= link_to "Price", "/offers/new" %>
+    <p>Price: <%= @user.price %></p>
     <div class="title">
-      <h5 class="card-title">Title</h5>
+      <h5 class="card-title"><%= @offer.title %></h5>
+
     </div>
-    <p class="card-text">This is a description</p>
-    <a href="#" class="btn btn-primary">View offer page</a>
+    <p class="card-text"><%= @offer.description %></p>
   </div>
+  <a href="/app/views/bookings/index.html.erb" class="btn btn-primary">View offer page</a>
+</div>
+<div>
+<a href="/app/views/offers/new.html.erb" class="btn btn-primary">New</a>
 </div>
