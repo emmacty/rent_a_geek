@@ -15,16 +15,18 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
+    @offer.user_id = current_user.id
     if @offer.save
-      redirect_to offers_path(@offer)
+      redirect_to offer_path(@offer)
     else
-      render :new, status: :unprocessable_entitiy
+      render "new", status: :unprocessable_entity
     end
   end
+
 
   private
 
   def offer_params
-    params.require(:offer).permit(:date, :price, :description, :status, :user_id, :title, :localisation, :profession, :experience)
+    params.require(:offer).permit(:date, :price, :description, :title, :localisation, :profession, :experience)
   end
 end
