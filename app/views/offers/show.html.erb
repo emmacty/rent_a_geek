@@ -1,9 +1,37 @@
-<h1>My offer</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
 
-<%= @offer.title %>
-<%= @offer.description %>
-<%= @offer.price %>
-<%= @offer.date %>
-<%= @offer.localisation %>
-<%= @offer.experience %>
-<%= @offer.profession %>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-card">
+      <div class="profile-image">
+        <%= cl_image_tag @offer.user.photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+      <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
+      <p><%= @offer.title %></p>
+      <p>Price: <%= @user.price %></p>
+    </div>
+
+    <div class="info-card">
+      <h3>Date</h3>
+      <p><%= @offer.date %></p>
+    </div>
+
+    <div class="info-card">
+      <h3>Location</h3>
+      <p><%= @offer.localisation %></p>
+    </div>
+
+    <div class="description-card">
+      <h3>Description</h3>
+      <p><%= @offer.description %></p>
+    </div>
+  </div>
+    <%= link_to "Booking", booking_path, class: "create-button" %>
+
+</body>
+</html>
