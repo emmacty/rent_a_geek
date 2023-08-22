@@ -54,7 +54,6 @@ Offer.create!(
   description: 'Experienced Ruby on Rails developer available for freelance projects in Lyon, France.',
   title: 'Ruby on Rails Developer',
   date: Date.today,
-  status: 'Available',
   experience: 5,
   profession: 'Web Developer',
   localisation: 'Lyon, France'
@@ -66,7 +65,6 @@ Offer.create!(
   description: 'Skilled front-end developer seeking remote work opportunities.',
   title: 'Front-End Developer',
   date: Date.today,
-  status: 'Available',
   experience: 3,
   profession: 'Web Developer',
   localisation: 'Marseille, France'
@@ -78,7 +76,6 @@ Offer.create!(
   description: 'Backend developer with expertise in database design and optimization.',
   title: 'Backend Developer',
   date: Date.today,
-  status: 'Available',
   experience: 6,
   profession: 'Web Developer',
   localisation: 'Paris, France'
@@ -90,7 +87,6 @@ Offer.create!(
   description: 'React.js expert available for contract work on web applications.',
   title: 'React.js Developer',
   date: Date.today,
-  status: 'Available',
   experience: 4,
   profession: 'Web Developer',
   localisation: 'Toulouse, France'
@@ -102,7 +98,6 @@ Offer.create!(
   description: 'UI/UX designer passionate about creating user-friendly interfaces.',
   title: 'UI/UX Designer',
   date: Date.today,
-  status: 'Available',
   experience: 5,
   profession: 'Designer',
   localisation: 'Bordeaux, France'
@@ -114,7 +109,6 @@ Offer.create!(
   description: 'DevOps engineer specializing in automation and CI/CD pipelines.',
   title: 'DevOps Engineer',
   date: Date.today,
-  status: 'Available',
   experience: 7,
   profession: 'DevOps',
   localisation: 'Nice, France'
