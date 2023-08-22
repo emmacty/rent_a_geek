@@ -13,7 +13,7 @@
       </div>
       <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
       <p><%= @offer.title %></p>
-      <p>Price: <%= @user.price %></p>
+      <p>Price: <%= @offer.price %></p>
     </div>
 
     <div class="info-card">
@@ -31,7 +31,7 @@
       <p><%= @offer.description %></p>
     </div>
   </div>
-    <%= link_to "Booking", booking_path, class: "create-button" %>
+    <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "create-button" %>
 
 </body>
 </html>

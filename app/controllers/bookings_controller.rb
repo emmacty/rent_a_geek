@@ -4,20 +4,18 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def create
-    @booking = Booking.new(booking_params)
+  def just_booked
     @offer = Offer.find(params[:offer_id])
-    @booking.offer = @offer
+  end
+
+  def create_booking
+    @offer = Offer.find(params[:offer_id])
+    @booking = Booking.new(offer_id: @offer.id, user_id: current_user.id)
     if @booking.save
-      redirect_to offer_path(@offer)
+      redirect_to offer_just_booked_path(@offer)
     else
       render "offers/show", status: :unprocessable_entity
     end
   end
 
-  private
-
-  def booking_params
-    params.require(:booking).permit(:offer_id, :user_id)
-  end
 end
