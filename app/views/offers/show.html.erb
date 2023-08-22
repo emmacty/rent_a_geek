@@ -22,11 +22,6 @@
         </div>
       </div>
 
-      <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
-      <p><%= @offer.title %></p>
-      <p>Price: <%= @offer.price %>€</p>
-    </div>
-
       <div class="col-md-8">
         <div class="d-flex">
           <div class="col-md-6">
@@ -60,7 +55,7 @@
 
     <div class="row mt-4">
       <div class="col-md-12">
-        <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "button" %>
+        <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "btn btn-primary btn-shadow", style: "background-color: #F0544F;" %>
       </div>
     </div>
   </div>
