@@ -49,7 +49,7 @@ user_6.save
 puts "Users created"
 puts "Creating offers..."
 Offer.create!(
-  user_id: User.first.id,
+  user_id: user_1.id,
   price: 780,
   description: 'Experienced Ruby on Rails developer available for freelance projects in Lyon, France.',
   title: 'Ruby on Rails Developer',
@@ -60,7 +60,7 @@ Offer.create!(
 )
 
 Offer.create!(
-  user_id: User.second.id,
+  user_id: user_2.id,
   price: 600,
   description: 'Skilled front-end developer seeking remote work opportunities.',
   title: 'Front-End Developer',
@@ -71,7 +71,7 @@ Offer.create!(
 )
 
 Offer.create!(
-  user_id: User.third.id,
+  user_id: user_3.id,
   price: 900,
   description: 'Backend developer with expertise in database design and optimization.',
   title: 'Backend Developer',
@@ -82,7 +82,7 @@ Offer.create!(
 )
 
 Offer.create!(
-  user_id: User.fourth.id,
+  user_id: user_4.id,
   price: 550,
   description: 'React.js expert available for contract work on web applications.',
   title: 'React.js Developer',
@@ -93,7 +93,7 @@ Offer.create!(
 )
 
 Offer.create!(
-  user_id: User.fifth.id,
+  user_id: user_5.id,
   price: 800,
   description: 'UI/UX designer passionate about creating user-friendly interfaces.',
   title: 'UI/UX Designer',
@@ -104,7 +104,7 @@ Offer.create!(
 )
 
 Offer.create!(
-  user_id: User.last.id,
+  user_id: user_6.id,
   price: 700,
   description: 'DevOps engineer specializing in automation and CI/CD pipelines.',
   title: 'DevOps Engineer',
