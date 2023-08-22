@@ -5,16 +5,47 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
+
 puts "Cleaning database..."
 Offer.destroy_all
 User.destroy_all
 puts "Creating users..."
-User.create!(email: 'user1@example.com', password: 'password123', first_name: 'John', last_name: 'Doe', created_at: Time.now, updated_at: Time.now)
-User.create!(email: 'user2@example.com', password: 'password232', first_name: 'Jane', last_name: 'Smith', created_at: Time.now, updated_at: Time.now)
-User.create!(email: 'user3@example.com', password: 'password345', first_name: 'Alice', last_name: 'Johnson', created_at: Time.now, updated_at: Time.now)
-User.create!(email: 'user4@example.com', password: 'password476', first_name: 'Bob', last_name: 'Brown', created_at: Time.now, updated_at: Time.now)
-User.create!(email: 'user5@example.com', password: 'password589', first_name: 'Ella', last_name: 'Davis', created_at: Time.now, updated_at: Time.now)
-User.create!(email: 'user6@example.com', password: 'password676', first_name: 'David', last_name: 'Lee', created_at: Time.now, updated_at: Time.now)
+user_1 = User.new(email: 'user1@example.com', password: 'password123', first_name: 'Maïwenn', last_name: 'Berthot', created_at: Time.now, updated_at: Time.now)
+user_2 = User.new(email: 'user2@example.com', password: 'password232', first_name: 'Andy', last_name: 'de Cock', created_at: Time.now, updated_at: Time.now)
+user_3 = User.new(email: 'user3@example.com', password: 'password345', first_name: 'Victoria', last_name: 'Paranina', created_at: Time.now, updated_at: Time.now)
+user_4 = User.new(email: 'user4@example.com', password: 'password476', first_name: 'Emma', last_name: 'Cauty', created_at: Time.now, updated_at: Time.now)
+user_5 = User.new(email: 'user5@example.com', password: 'password589', first_name: 'Laura', last_name: 'Beauvais', created_at: Time.now, updated_at: Time.now)
+user_6 = User.new(email: 'user6@example.com', password: 'password676', first_name: 'Joris', last_name: 'Chenna', created_at: Time.now, updated_at: Time.now)
+
+require "open-uri"
+
+file = URI.open("https://avatars.githubusercontent.com/u/102687903?v=4")
+user_1.photo.attach(io: file, filename: "maiwenn.png", content_type: "image/png")
+user_1.save
+
+file_2 = URI.open("https://avatars.githubusercontent.com/u/139124191?v=4")
+user_2.photo.attach(io: file_2, filename: "andy.png", content_type: "image/png")
+user_2.save
+
+file_3 = URI.open("https://avatars.githubusercontent.com/u/139124726?v=4")
+user_3.photo.attach(io: file_3, filename: "victoria.png", content_type: "image/png")
+user_3.save
+
+file_4 = URI.open("https://avatars.githubusercontent.com/u/135238187?v=4")
+user_4.photo.attach(io: file_4, filename: "emma.png", content_type: "image/png")
+user_4.save
+
+file_5 = URI.open("https://avatars.githubusercontent.com/u/101594582?v=4")
+user_5.photo.attach(io: file_5, filename: "laura.png", content_type: "image/png")
+user_5.save
+
+file_6 = URI.open("https://avatars.githubusercontent.com/u/139125894?v=4")
+user_6.photo.attach(io: file_6, filename: "joris.png", content_type: "image/png")
+user_6.save
+
+
+
 puts "Users created"
 puts "Creating offers..."
 Offer.create!(
