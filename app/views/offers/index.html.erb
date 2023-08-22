@@ -16,12 +16,11 @@
       <%# <%= cl_image_tag @offer.user.photo.key, height: 300, width: 400, crop: :fill %> %>
       <i class="fa-solid fa-heart"></i>
       <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
-
     <hr>
   </div>
 
   <div class="card-body">
-    <p>Price: <%= @user.price %></p>
+    <p>Price: <%= @offer.price %></p>
     <div class="title">
       <h5 class="card-title"><%= @offer.title %></h5>
 
