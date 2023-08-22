@@ -11,25 +11,29 @@
   </div>
 <% end %>
 
-<div class="card" style="width: 18rem;">
-    <div class="image-elements">
-      <%# <%= cl_image_tag @offer.user.photo.key, height: 300, width: 400, crop: :fill %> %>
-      <i class="fa-solid fa-heart"></i>
-      <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
+<div class="cards">
+  <% @offers.each do |offer|%>
+    <div class="card" style="width: 18rem;">
+      <%= cl_image_tag offer.user.photo.key %>
+      <div class="image-elements">
+        <i class="fa-solid fa-heart"></i>
 
-    <hr>
-  </div>
+        <h2><%= offer.user.first_name %> <%= offer.user.last_name %></h2>
+        <h5><i class="fa-solid fa-location-dot"></i><%= offer.localisation %></h5>
 
-  <div class="card-body">
-    <p>Price: <%= @user.price %></p>
-    <div class="title">
-      <h5 class="card-title"><%= @offer.title %></h5>
+        <hr>
+      </div>
+      <div class="card-body">
+        <p>Price: <%= offer.price %>€</p>
 
+        <div class="title">
+          <h5 class="card-title"><%= offer.title %></h5>
+        </div>
+        <p class="card-text"><%= offer.description %></p>
+        <a href="#" class="btn btn-primary">View offer</a>
+        <%= offer.date %>
+      </div>
     </div>
-    <p class="card-text"><%= @offer.description %></p>
-  </div>
-  <a href="/app/views/bookings/index.html.erb" class="btn btn-primary">View offer page</a>
+  <% end %>
 </div>
-<div>
-<a href="/app/views/offers/new.html.erb" class="btn btn-primary">New</a>
-</div>
+<%= link_to "New", "/offers/new" %>
