@@ -1,0 +1,18 @@
+<div class="container mt-5 mb-3">
+  <div class="row">
+    <div class="col"></div>
+    <%= simple_form_for @offer do |f| %>
+  <%= f.input :title, label: 'Offer Title',
+               hint: 'Shortly describe the service you would like to provide' %>
+  <%= f.input :description, label: 'Job Description' %>
+  <%= f.input :price, label: 'Price in Euro' %>
+  <%= f.input :date, label: 'Availability date',
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :experience, label: 'Years of Experience' %>
+  <%= f.input :profession, label: 'Your job title' %>
+  <%= f.input :localisation, label: 'Location' %>
+  <%= f.submit "Become a geek!", class: "button" %>
+  <% end %>
+  </div>
+</div>
