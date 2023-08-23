@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :find_your_geeks
   devise_for :users
   root to: "offers#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

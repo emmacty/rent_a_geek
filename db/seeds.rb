@@ -56,7 +56,7 @@ Offer.create!(
   date: Date.today,
   experience: 5,
   profession: 'Web Developer',
-  localisation: 'Lyon, France'
+  localisation: '2 rue Dupaty, Bordeaux, France'
 )
 
 Offer.create!(
@@ -67,7 +67,7 @@ Offer.create!(
   date: Date.today,
   experience: 3,
   profession: 'Web Developer',
-  localisation: 'Marseille, France'
+  localisation: '3 rue de Macau, Bordeaux, France'
 )
 
 Offer.create!(
@@ -78,7 +78,7 @@ Offer.create!(
   date: Date.today,
   experience: 6,
   profession: 'Web Developer',
-  localisation: 'Paris, France'
+  localisation: '4 rue des Girondins, Bordeaux, France'
 )
 
 Offer.create!(
@@ -89,7 +89,7 @@ Offer.create!(
   date: Date.today,
   experience: 4,
   profession: 'Web Developer',
-  localisation: 'Toulouse, France'
+  localisation: '30 rue Bouffard, Bordeaux, France'
 )
 
 Offer.create!(
@@ -100,7 +100,7 @@ Offer.create!(
   date: Date.today,
   experience: 5,
   profession: 'Designer',
-  localisation: 'Bordeaux, France'
+  localisation: '5 rue André, Bordeaux, France'
 )
 
 Offer.create!(
@@ -111,6 +111,6 @@ Offer.create!(
   date: Date.today,
   experience: 7,
   profession: 'DevOps',
-  localisation: 'Nice, France'
+  localisation: '8 rue Louis Mie, Bordeaux, France'
 )
 puts "Finished!"

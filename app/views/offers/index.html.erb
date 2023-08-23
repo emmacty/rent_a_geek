@@ -46,6 +46,12 @@
               <i class="fa-regular fa-heart"></i>
             </div>
           </div>
+
+          <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY=pk.eyJ1IjoiYm1haXdlbm4iLCJhIjoiY2xqbzdlaXFsMDR3MjNjb3h5am1kaGo5eSJ9.I6wAwQKIp2M75J_yFnNHYQ
+'] %>"></div>
         </div>
   <% end %>
 </div>
