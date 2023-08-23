@@ -1,3 +1,5 @@
+
+<%= cl_image_tag offer.user.photo.key, height: 60, width: 60, crop: :fill, class: "rounded-circle" %>
 <h3><%= offer.user.first_name %> <%= offer.user.last_name %></h3>
 <p><%= offer.title %></p>
 <p><%= link_to "Discover more", offer_path(offer) %></p>
