@@ -1,70 +1,60 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>User Profile</title>
-  <!-- Include Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<div class="container mt-5">
+  <div class="d-flex align-items-start">
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body text-center">
+          <div class="profile-image">
+            <%= cl_image_tag @offer.user.photo.key, height: 300, width: 300, crop: :fill, class: "rounded-circle" %>
+          </div>
+          <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
+          <p><%= @offer.title %></p>
+          <p>Price: <%= @offer.price %></p>
+        </div>
+      </div>
+    </div>
 
-</head>
-<body>
-  <div class="container mt-5">
-    <div class="d-flex align-items-start">
-      <div class="col-md-4">
+  <div class="col-md-8">
+    <div class="d-flex">
+      <div class="col-md-6">
         <div class="card shadow">
-          <div class="card-body text-center">
-            <div class="profile-image">
-              <%= cl_image_tag @offer.user.photo.key, height: 300, width: 300, crop: :fill, class: "rounded-circle" %>
-            </div>
-            <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
-            <p><%= @offer.title %></p>
-            <p>Price: <%= @offer.price %></p>
+          <div class="card-body">
+            <h3>Date</h3>
+            <p><%= @offer.date %></p>
           </div>
         </div>
       </div>
 
-      <div class="col-md-8">
-        <div class="d-flex">
-          <div class="col-md-6">
-            <div class="card shadow">
-              <div class="card-body">
-                <h3>Date</h3>
-                <p><%= @offer.date %></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="card shadow">
-              <div class="card-body">
-                <h3>Location</h3>
-                <p><%= @offer.localisation %></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12 mt-3">
-          <div class="card shadow">
-            <div class="card-body">
-              <h3>Description</h3>
-              <p><%= @offer.description %> </p>
-            </div>
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-body">
+            <h3>Location</h3>
+            <p><%= @offer.localisation %></p>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="row mt-4">
-      <div class="col-md-12 ms-3">
-        <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "btn btn-danger"%>
-        <% if @offer.user == current_user %>
-        <%= link_to "Edit offer", edit_offer_path(@offer), class: "btn btn-danger"%>
-        <%= link_to "Delete offer",
-          offer_path(@offer),
-          class: "btn btn-danger",
-          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
-        %>
-        <% end %>
+    <div class="col-md-12 mt-3">
+      <div class="card shadow">
+        <div class="card-body">
+          <h3>Description</h3>
+          <p><%= @offer.description %> </p>
+        </div>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
+
+  <div class="row mt-4">
+    <div class="col-md-12 ms-3">
+      <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "btn btn-danger"%>
+      <% if @offer.user == current_user %>
+      <%= link_to "Edit offer", edit_offer_path(@offer), class: "btn btn-danger"%>
+      <%= link_to "Delete offer",
+        offer_path(@offer),
+        class: "btn btn-danger",
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
+      %>
+      <% end %>
+    </div>
+  </div>
+</div>
