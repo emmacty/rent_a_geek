@@ -28,13 +28,6 @@
   padding: 15px;
 }
 
-.btn-view-offer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
-  padding: 15px;
-}
-
 .date {
   text-align: center;
 }
@@ -61,6 +54,10 @@
   top:0;
   z-index:1000;
   width: 100%;
+}
+
+.booking-title {
+  margin-top: 40px;
 }
 
 #search_query {
@@ -99,3 +96,25 @@
   margin-right: 8px;
 }
 @import "button";
+
+.banner, .session-top {
+  margin-top: 70px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin-top: 200px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}

@@ -16,3 +16,28 @@
 .custom-button:hover {
   background-color: #F0544F; /* Change background color on hover (if desired) */
 }
+
+.btn-view-offer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  padding: 15px;
+
+}
+
+.btn-danger {
+  color: white;
+  border-radius: 5px;
+}
+
+.btn-danger:hover {
+  background-color: #F0544F; /* Change background color on hover (if desired) */
+}
+
+.btn-new {
+  position: relative;
+  transform: translateX(205%);
+  display: grid;
+  grid: 1fr;
+  margin-top: 15px;
+}

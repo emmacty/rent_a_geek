@@ -2,18 +2,15 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
-    @my_bookings = Booking.where(user_id: current_user.id)
-  end
-
-  def just_booked
-    @offer = Offer.find(params[:offer_id])
+    @my_geeks = current_user.bookings
+    @my_missions = current_user.missions
   end
 
   def create_booking
     @offer = Offer.find(params[:offer_id])
     @booking = Booking.new(offer_id: @offer.id, user_id: current_user.id)
     if @booking.save
-      redirect_to offer_just_booked_path(@offer)
+      redirect_to offer_path(@offer), notice: "🎉 You just booked #{ @offer.user.first_name }"
     else
       render "offers/show", status: :unprocessable_entity
     end

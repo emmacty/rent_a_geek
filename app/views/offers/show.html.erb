@@ -22,11 +22,6 @@
         </div>
       </div>
 
-      <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
-      <p><%= @offer.title %></p>
-      <p>Price: <%= @offer.price %>€</p>
-    </div>
-
       <div class="col-md-8">
         <div class="d-flex">
           <div class="col-md-6">
@@ -60,9 +55,33 @@
 
     <div class="row mt-4">
       <div class="col-md-12">
+
         <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "btn btn-danger" %>
+
+        <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "btn btn-primary btn-shadow", style: "background-color: #F0544F;" %>
       </div>
     </div>
+
+   <% if @offer.user == current_user %>
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <%= link_to "Edit offer", edit_offer_path(@offer), class: "btn btn-primary btn-shadow", style: "background-color: #F0544F;" %>
+     </div>
+    </div>
+    <% end %>
+
+    <% if @offer.user == current_user %>
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <%= link_to "Delete offer",
+          offer_path(@offer),
+          class: "btn btn-primary btn-shadow",
+          style: "background-color: #F0544F;",
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
+        %>
+      </div>
+    </div>
+    <% end %>
   </div>
 
   <!-- Include Bootstrap JS (optional) -->
