@@ -54,34 +54,17 @@
     </div>
 
     <div class="row mt-4">
-      <div class="col-md-12">
-        <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "btn btn-primary btn-shadow", style: "background-color: #F0544F;" %>
-      </div>
-    </div>
-
-   <% if @offer.user == current_user %>
-    <div class="row mt-4">
-      <div class="col-md-12">
-        <%= link_to "Edit offer", edit_offer_path(@offer), class: "btn btn-primary btn-shadow", style: "background-color: #F0544F;" %>
-     </div>
-    </div>
-    <% end %>
-
-    <% if @offer.user == current_user %>
-    <div class="row mt-4">
-      <div class="col-md-12">
+      <div class="col-md-12 ms-3">
+        <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "btn btn-danger"%>
+        <% if @offer.user == current_user %>
+        <%= link_to "Edit offer", edit_offer_path(@offer), class: "btn btn-danger"%>
         <%= link_to "Delete offer",
           offer_path(@offer),
-          class: "btn btn-primary btn-shadow",
-          style: "background-color: #F0544F;",
+          class: "btn btn-danger",
           data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
         %>
+        <% end %>
       </div>
     </div>
-    <% end %>
-  </div>
-
-  <!-- Include Bootstrap JS (optional) -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
 </html>
