@@ -1,12 +1,11 @@
 class OffersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show, :index]
-
+  skip_before_action :authenticate_user!, only: [:show, :index, :update, :destroy, :edit]
+  before_action :set_offer, only: [:show, :edit, :update, :destroy]
   def index
     @offers = Offer.all
   end
 
   def show
-    @offer = Offer.find(params[:id])
   end
 
   def new
@@ -23,10 +22,30 @@ class OffersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @offer.update(offer_params)
+      redirect_to offer_path(@offer)
+      flash[:alert] = "Successfully edited!"
+    else
+      render "edit", status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @offer.destroy
+    redirect_to offers_path, status: :see_other
+  end
 
   private
 
   def offer_params
     params.require(:offer).permit(:date, :price, :description, :title, :localisation, :profession, :experience)
+  end
+
+  def set_offer
+    @offer = Offer.find(params[:id])
   end
 end
