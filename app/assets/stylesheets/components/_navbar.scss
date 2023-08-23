@@ -20,3 +20,11 @@
 .navbar-nav {
   color: #F0544F;
 }
+
+.navbar {
+  border-bottom: black solid 1px;
+  position:fixed;
+  top:0;
+  z-index:1000;
+  width: 100%;
+}

@@ -6,24 +6,7 @@
 @import "banner";
 @import "map";
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  margin-left: 150px;
-  margin-bottom: 50px;
-}
 
-.card {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  border-radius: 5px;
-}
 
 .image-elements {
   padding: 15px;
@@ -38,23 +21,9 @@
   margin-bottom: 50px;
 }
 
-.fa-heart:hover {
-  content: "\f004";
-  opacity: 0.6;
-  color: red;
-}
-
 .text-center {
   padding: 50px;
   border-bottom: black solid 1px;
-}
-
-.navbar {
-  border-bottom: black solid 1px;
-  position:fixed;
-  top:0;
-  z-index:1000;
-  width: 100%;
 }
 
 .booking-title {
@@ -122,4 +91,8 @@ a{
 
 .container {
   padding-top: 40px;
+}
+
+body {
+  float: inline-start;
 }
