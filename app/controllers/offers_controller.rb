@@ -36,7 +36,14 @@ class OffersController < ApplicationController
 
   def destroy
     @offer.destroy
+    @offer.bookings.destroy_all
+    @offer.destroy
     redirect_to offers_path, status: :see_other
+  end
+
+
+  def my_offers
+    @my_offers = current_user.offers
   end
 
   private
