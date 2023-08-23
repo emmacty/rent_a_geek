@@ -16,6 +16,7 @@
       <ul class="navbar-nav">
 
         <% if user_signed_in? %>
+          <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, class: "rounded-circle" %>
           <li class="nav-item">
             <%= link_to "My bookings", "/bookings", class: "nav-link" %>
           </li>
