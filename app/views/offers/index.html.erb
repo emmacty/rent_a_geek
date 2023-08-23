@@ -6,15 +6,15 @@
   </div>
 </div>
 
-<%= simple_form_for :search, url: root_path, method: :get do |f| %>
+<!--<%= simple_form_for :search, url: root_path, method: :get do |f| %>
   <div class="search-form-control form-group">
     <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder= "Search" />
     <button name="button" type="submit" class="btn btn-primary">
       <i class="fas fa-search"></i> Search
     </button>
-  </div>
-    <div class="btn-new">
-      <%= link_to "Create your offer", "/offers/new", class:"btn btn-primary", id:"new_btn"%>
+  </div>-->
+    <div class="btn-new" style="width: 18rem;">
+      <%= link_to "Create your offer", "/offers/new", class:"btn btn-danger", id:"btn-new"%>
     </div>
 <% end %>
 
@@ -38,7 +38,7 @@
         <p class="card-text"><%= offer.description %></p>
     </div>
           <div class="btn-view-offer">
-          <%= link_to "View offer", offer_path(offer), class: "btn btn-primary" %>
+          <%= link_to "View offer", offer_path(offer), class:"btn btn-danger" %>
             <div class="date">
               <%= offer.date %>
             </div>
