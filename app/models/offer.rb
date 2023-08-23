@@ -1,6 +1,6 @@
 class Offer < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   validates :price, presence: true
   validates :description, presence: true, length: { minimum: 20, maximum: 1000 }
   validates :user_id, presence: true
