@@ -79,7 +79,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem 'data-confirm-modal'
-gem 'bootstrap', '~> 4.0'
-gem 'jquery-rails'
