@@ -1,8 +1,8 @@
-div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <div class="container-fluid">
     <div class="navbar-left">
-      <%= link_to "/" do %>
-        <p class="home_logo"><%= image_tag "final_home_design.png", width: 110%> <%= image_tag "new_logo_geek.png", width: 30%></p>
+      <%= link_to "/", class: "navbar-brand" do %>
+        <p><%= image_tag "final_home_design.png"%>:intello:</p>
       <% end %>
     </div>
     <div class="navbar-center">
@@ -21,8 +21,8 @@ div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
           <li class ="nav-item dropdown">
           <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, class: "avatar dropdown-togfle", id:"navbarDropdown", data: { bs_toggle:"dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-          <%=link_to "My bookings", "#", class: "dropdown-item" %>
-          <%=link_to "My offers", "#", class: "dropdown-item" %>
+            <%=link_to "My bookings", "/bookings", class: "dropdown-item" %>
+            <%=link_to "My offers", my_offers_offers_path, class: "dropdown-item" %>
           </div>
           </li>
         <% else %>
