@@ -33,21 +33,19 @@
         <hr>
       </div>
       <div class="card-body">
-        <p>Price: <%= offer.price %>€</p>
+        <p>Price per day: <%= offer.price %>€</p>
 
         <div class="title">
           <h5 class="card-title"><%= offer.title %></h5>
         </div>
         <p class="card-text"><%= offer.description %></p>
+        <p class="card-text"><%= offer.date %></p>
     </div>
           <div class="btn-view-offer">
-          <%= link_to "View offer", offer_path(offer), class:"btn btn-danger" %>
-            <div class="date">
-              <%= offer.date %>
-            </div>
-            <div class="heart">
+          <%= link_to "View offer", offer_path(offer), class:"btn btn-danger d-block" %>
+            <!-- <div class="heart">
               <i class="fa-regular fa-heart"></i>
-            </div>
+            </div>-->
           </div>
         </div>
   <% end %>
