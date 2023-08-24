@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     get 'create_booking', to: 'bookings#create_booking', as: 'create_booking'
     get 'just_booked', to: 'bookings#just_booked', as: 'just_booked'
   end
-  resources :bookings, only: [:index]
+  resources :bookings, only: [:index, :destroy]
 end

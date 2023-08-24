@@ -11,6 +11,9 @@
             <p><%= geek.offer.title %></p>
             <p><%= geek.offer.description %></p>
             <p>Reserved for: <%= geek.offer.date %></p>
+              <%= link_to "Cancel this booking",
+              booking_path(geek),
+              data: {turbo_method: :delete, turbo_confirm: "Delete this booking?"}, class:"btn btn-danger d-block"%>
           </div>
         </div>
       <% end %>
