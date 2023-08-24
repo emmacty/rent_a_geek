@@ -14,9 +14,13 @@ puts "Creating users..."
 user_1 = User.new(email: 'user1@example.com', password: 'password123', first_name: 'Maïwenn', last_name: 'Bertho', created_at: Time.now, updated_at: Time.now)
 user_2 = User.new(email: 'user2@example.com', password: 'password232', first_name: 'Andy', last_name: 'de Cock', created_at: Time.now, updated_at: Time.now)
 user_3 = User.new(email: 'user3@example.com', password: 'password345', first_name: 'Victoria', last_name: 'Paranina', created_at: Time.now, updated_at: Time.now)
-user_4 = User.new(email: 'user4@example.com', password: 'password476', first_name: 'Emma', last_name: 'Cauty', created_at: Time.now, updated_at: Time.now)
+user_4 = User.new(email: 'emma@example.com', password: 'password', first_name: 'Emma', last_name: 'Cauty', created_at: Time.now, updated_at: Time.now)
 user_5 = User.new(email: 'user5@example.com', password: 'password589', first_name: 'Laura', last_name: 'Beauvais', created_at: Time.now, updated_at: Time.now)
 user_6 = User.new(email: 'user6@example.com', password: 'password676', first_name: 'Joris', last_name: 'Chenna', created_at: Time.now, updated_at: Time.now)
+user_7 = User.new(email: 'user7@example.com', password: 'password677', first_name: 'Michael', last_name: 'Scott', created_at: Time.now, updated_at: Time.now)
+user_8 = User.new(email: 'user8@example.com', password: 'password678', first_name: 'Dwight', last_name: 'Schrute', created_at: Time.now, updated_at: Time.now)
+user_9 = User.new(email: 'user9@example.com', password: 'password679', first_name: 'Dewey', last_name: 'Wilkerson', created_at: Time.now, updated_at: Time.now)
+user_10 = User.new(email: 'user10@example.com', password: 'password680', first_name: 'Chandler', last_name: 'Bing', created_at: Time.now, updated_at: Time.now)
 
 require "open-uri"
 
@@ -44,7 +48,21 @@ file_6 = URI.open("https://avatars.githubusercontent.com/u/139125894?v=4")
 user_6.photo.attach(io: file_6, filename: "joris.png", content_type: "image/png")
 user_6.save
 
+file_7 = URI.open("https://upload.wikimedia.org/wikipedia/en/d/dc/MichaelScott.png?20111015043011")
+user_7.photo.attach(io: file_7, filename: "Michael.png", content_type: "image/png")
+user_7.save
 
+file_8 = URI.open("https://static.wikia.nocookie.net/theoffice/images/c/c5/Dwight_.jpg/revision/latest/scale-to-width-down/1200?cb=20170701082424")
+user_8.photo.attach(io: file_8, filename: "Dwight.png", content_type: "image/png")
+user_8.save
+
+file_9 = URI.open("https://static.papergeek.fr/2017/07/dewey-malcolm.jpg")
+user_9.photo.attach(io: file_9, filename: "Dewey.png", content_type: "image/png")
+user_9.save
+
+file_10 = URI.open("https://miro.medium.com/v2/resize:fit:1200/1*KPqaxOOGnHWsfzUipNSkDw.jpeg")
+user_10.photo.attach(io: file_10, filename: "Chandler.png", content_type: "image/png")
+user_10.save
 
 puts "Users created"
 puts "Creating offers..."
@@ -82,17 +100,6 @@ Offer.create!(
 )
 
 Offer.create!(
-  user_id: user_4.id,
-  price: 550,
-  description: 'React.js expert available for contract work on web applications.',
-  title: 'React.js Developer',
-  date: Date.today,
-  experience: 4,
-  profession: 'Web Developer',
-  localisation: '30 rue Bouffard, Bordeaux, France',
-)
-
-Offer.create!(
   user_id: user_5.id,
   price: 800,
   description: 'UI/UX designer passionate about creating user-friendly interfaces.',
@@ -112,5 +119,49 @@ Offer.create!(
   experience: 7,
   profession: 'DevOps',
   localisation: '8 rue Louis Mie, Bordeaux, France',
+)
+
+Offer.create!(
+  user_id: user_7.id,
+  price: 900,
+  description: 'Guess what, everyone? I am proud to announce that I, Michael Scott, am a Rails developer extraordinaire! Just like the rails on a train, I m here to steer this coding journey to success. And remember, my code may not always be on track, but it s full of passion, creativity, and a touch of that signature Michael magic!',
+  title: 'Developer rails ',
+  date: Date.today,
+  experience: 7,
+  profession: 'Developer',
+  localisation: '8 rue Reignier, Bordeaux, France',
+)
+
+Offer.create!(
+  user_id: user_8.id,
+  price: 400,
+  description: 'Fact: I am a seasoned Rails developer, much like a seasoned beet farmer. With my expertise, I sow the seeds of clean code, nurture efficient algorithms, and harvest bug-free applications. You can trust my code to be as reliable as my meticulously calculated Schrute Bucks conversion rates.',
+  title: 'Developer professional and serious',
+  date: Date.today,
+  experience: 7,
+  profession: 'Pro developer',
+  localisation: '8 rue Corot, Bordeaux, France',
+)
+
+Offer.create!(
+  user_id: user_9.id,
+  price: 700,
+  description: 'Hey, you know what s cool? Being a backend developer is like secretly pulling the strings behind the scenes, weaving the web of code like a ninja spider. I mean, who needs the spotlight when you can make the website run smoother than mom s homemade pie? And just like that pie, my coding is the hidden ingredient that makes everything deliciously functional!',
+  title: 'Backend developer',
+  date: Date.today,
+  experience: 7,
+  profession: 'Backend developer',
+  localisation: '2 rue Jean Descas, Bordeaux, France',
+)
+
+Offer.create!(
+  user_id: user_10.id,
+  price: 550,
+  description: 'Sure thing! I m just a master at cookie disabling, a debugging ninja, and a copy-paste magician. My resume? Well, it s mostly a collection of misspelled commands and quick fixes that somehow turn into long-term solutions. I like to call it the subtle art of intuitive development',
+  title: 'Dev',
+  date: Date.today,
+  experience: 7,
+  profession: 'Dev',
+  localisation: '5 rue Pelleport, Bordeaux, France',
 )
 puts "Finished!"
