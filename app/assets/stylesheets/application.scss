@@ -10,3 +10,27 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/cards";
+@import "components/edit_offer";
+@import "components/cards_map.scss";
+@import "components/text.scss";
+@import "components/search_bar.scss";
+@import "components/location.scss";
+@import "components/footer.scss";
+
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
