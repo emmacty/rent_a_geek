@@ -3,6 +3,9 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
   def index
     @offers = Offer.all
+    if params[:query].present?
+      @offers = @offers.global_search(params[:query])
+    end
     @markers = @offers.geocoded.map do |offer|
       {
         lat: offer.latitude,
