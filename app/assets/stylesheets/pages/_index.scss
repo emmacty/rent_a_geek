@@ -1,5 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
+@import "edit_offer";
 
 .center-title {
   text-align:center;
@@ -12,8 +14,4 @@
 #search_query {
   margin-top: 10px;
   margin-right: 15px;
-}
-
-html {
-  padding-right: 30px;
 }
