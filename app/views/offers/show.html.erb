@@ -1,45 +1,51 @@
+<style>
+  .orange-text {
+    color: #F0544F;
+  }
+  .blue-text {
+    color: #A8DDCE;
+  }
+  .name-text {
+    color: #F0544F;
+  }
+</style>
+
 <div class="container mt-5 pb-5">
-  <div class="d-flex align-items-start">
+  <div class="row">
     <div class="col-md-4">
-      <div class="card shadow">
-        <div class="card-body text-center">
-          <div class="profile-image">
-            <%= cl_image_tag @offer.user.photo.key, height: 300, width: 300, crop: :fill, class: "rounded-circle" %>
-          </div>
-          <h2><%= @offer.user.first_name %> <%= @offer.user.last_name %></h2>
-          <p><%= @offer.title %></p>
-          <p>Price: <%= @offer.price %> €</p>
-        </div>
-      </div>
+      <!-- Photo on the left -->
+      <img src="<%= cl_image_path(@offer.user.photo.key, height: 650, width: 500, crop: :fill) %>" alt="User Photo" class="img-fluid rounded">
     </div>
-
-  <div class="col-md-8">
-    <div class="d-flex">
-      <div class="col-md-6">
-        <div class="card shadow">
-          <div class="card-body">
-            <h3>Date</h3>
-            <p><%= @offer.date %></p>
-          </div>
-        </div>
+    <div class="col-md-8">
+      <!-- Text on the right -->
+      <div class="card shadow p-4">
+        <h2 class="name-text"><%= @offer.user.first_name %> <%= @offer.user.last_name %> 🚀</h2>
+        <p class="text-muted mb-4"><%= @offer.profession %> 💼</p>
+        <h3 class="blue-text"  >Experience 💡</h3>
+        <p><%= @offer.experience %> years</p>
+        <h3 class="blue-text" >Description 💬</h3>
+        <p><%= @offer.description %> </p>
+        <h3 class="blue-text" >Date 📅</h3>
+        <p><%= @offer.date %></p>
+        <h3 class="blue-text" >Location 🌎</h3>
+        <p><%= @offer.localisation %></p>
+        <h3 class="blue-text" >Price 💰</h3>
+        <p><%= @offer.price %>€ / day</p>
       </div>
-
-      <div class="col-md-6">
-        <div class="card shadow">
-          <div class="card-body">
-            <h3>Location</h3>
-            <p><%= @offer.localisation %></p>
-          </div>
+      <div class="col-md-8 mt-4">
+          <% if @offer.user != current_user %>
+          <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "btn btn-danger"%>
+          <% elsif @offer.user == current_user %>
+          <%= link_to "Edit offer", edit_offer_path(@offer), class: "btn btn-danger"%>
+          <%= link_to "Delete offer",
+            offer_path(@offer),
+            class: "btn btn-danger",
+            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
+          %>
+          <% end %>
         </div>
-      </div>
-    </div>
-    <div class="col-md-12 mt-3">
-      <div class="card shadow">
-        <div class="card-body">
-          <h3>Description</h3>
-          <p><%= @offer.description %> </p>
-        </div>
-      </div>
+  </div>
+</div>
     </div>
     <div class="cards_map">
         <div style="width: 100%; height: 265px; margin: 0 auto"
@@ -51,18 +57,4 @@
   </div>
 </div>
 
-  <div class="row mt-4">
-    <div class="col-md-12 ms-3">
-      <% if @offer.user != current_user %>
-      <%= link_to "Booking", offer_create_booking_path(offer_id: @offer.id), class: "btn btn-danger"%>
-      <% elsif @offer.user == current_user %>
-      <%= link_to "Edit offer", edit_offer_path(@offer), class: "btn btn-danger"%>
-      <%= link_to "Delete offer",
-        offer_path(@offer),
-        class: "btn btn-danger",
-        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
-      %>
-      <% end %>
-    </div>
-  </div>
 </div>

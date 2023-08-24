@@ -16,6 +16,22 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.accepted = true
+    @booking.save
+    flash[:alert] = "Congrats, you accepted a new mission! 🎉"
+    redirect_to bookings_path
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.declined = true
+    @booking.save
+    flash[:alert] = "You just declined a mission."
+    redirect_to bookings_path
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
