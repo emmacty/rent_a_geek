@@ -21,9 +21,9 @@
         <%= link_to "Create your offer", "/offers/new", class:"btn btn-danger", id:"btn-new"%>
       </div>
 
-<div class="cards">
+<div class="cards m-auto">
   <% @offers.each do |offer|%>
-    <div class="card" style="width: 18rem;">
+    <div class="card mx-5" style="width: 18rem;">
       <%= cl_image_tag(offer.user.photo.key, :height=>300, :width=>300, :crop=>"fill")%>
       <div class="image-elements">
 
@@ -51,7 +51,7 @@
   <% end %>
 </div>
 
-<h2 class="center-title mb-5">Find a developper near you!</h2>
+<h2 class="center-title blue-text my-5">Find a developper near you!</h2>
 
 <div style="width: 80%; height: 600px; margin-left: 170px;"
   data-controller="map"
