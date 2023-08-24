@@ -16,9 +16,16 @@
             <p><%= geek.offer.title %></p>
             <p><%= geek.offer.description %></p>
             <p>Reserved for: <%= geek.offer.date %></p>
+            <% if geek.accepted %>
+              <p style="color: #A8DDCE;"><strong><i class="fa-solid fa-check" style="color: #A8DDCE;"></i> Accepted</strong></p>
               <%= link_to "Cancel this booking",
               booking_path(geek),
               data: {turbo_method: :delete, turbo_confirm: "Cancel this booking?"}, class:"btn btn-danger d-block"%>
+            <% elsif geek.declined %>
+              <p style="color: #FD1015;"><strong><i class="fa-solid fa-x" style="color: #FD1015;"></i> Declined</strong></p>
+            <% else %>
+
+            <% end %>
           </div>
         </div>
       <% end %>
