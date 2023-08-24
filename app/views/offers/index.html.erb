@@ -27,7 +27,7 @@
       <%= cl_image_tag(offer.user.photo.key, :height=>300, :width=>300, :crop=>"fill")%>
       <div class="image-elements">
 
-        <h2><%= offer.user.first_name %> <%= offer.user.last_name %></h2>
+        <h2 class="blue-text"><%= offer.user.first_name %> <%= offer.user.last_name %></h2>
         <h5><i class="fa-solid fa-location-dot"></i><%= offer.localisation %></h5>
 
         <hr>
@@ -36,7 +36,7 @@
         <p>Price per day: <%= offer.price %>€</p>
 
         <div class="title">
-          <h5 class="card-title"><%= offer.title %></h5>
+          <h5 class="card-title blue-text"><%= offer.title %></h5>
         </div>
         <p class="card-text"><%= offer.description %></p>
         <p class="card-text"><%= offer.date %></p>
