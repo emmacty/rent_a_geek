@@ -79,7 +79,7 @@ Offer.create!(
 
 Offer.create!(
   user_id: user_2.id,
-  price: 600,
+  price: 850,
   description: 'Skilled front-end developer seeking remote work opportunities.',
   title: 'Front-End Developer',
   date: "#{Date.today} to #{Date.today + 15}",
