@@ -10,7 +10,7 @@
     <div class="row">
       <% @my_offers.each do |offer| %>
         <div class="col-md-12 mb-2">
-          <div class="card mb-3" style="max-width: 540px;">
+          <div class="card mb-3 p-3" style="max-width: 700px;">
             <div class="row g-0">
               <div class="col-md-4">
                 <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
@@ -19,7 +19,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body" style="padding-left: 20px;">
-                  <h5 class="card-title"><%= offer.title %></h5>
+                  <h5 class="card-title blue-text"><%= offer.title %></h5>
                   <p><%= offer.user.first_name %> <%= offer.user.last_name %></p>
                   <p><i class="fa-solid fa-location-dot"></i> <%= offer.localisation %></p>
                   <hr>
