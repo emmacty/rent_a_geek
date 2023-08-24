@@ -4,3 +4,16 @@
 .center-title {
   text-align:center;
 }
+
+body {
+  float: inline-start;
+}
+
+.container {
+  padding-top: 40px;
+}
+
+#search_query {
+  margin-top: 10px;
+  margin-right: 15px;
+}

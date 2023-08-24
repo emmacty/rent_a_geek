@@ -3,8 +3,3 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
-
-//= require jquery3
-//= require popper
-//= require bootstrap
-//= require data-confirm-modal
