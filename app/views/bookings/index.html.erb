@@ -1,10 +1,10 @@
-<div class="container mt-md-5">
-  <h1 style="color:#F0544F" class="text-center">My bookings</h1>
+<div class="container mt-4 mt-md-5">
+<h1 style="color:#F0544F">My bookings</h1>
   <div class="row">
     <div class="col-md-6">
-      <h2 style="color:#F0544F" class="text-center">My geeks</h2>
+      <h2 style="color:#F0544F">My geeks</h2>
       <% @my_geeks.each do |geek| %>
-        <div class="card m-auto mb-5" style="width: 18rem;">
+        <div class="card mb-3" style="width: 18rem;">
           <%= cl_image_tag geek.offer.user.photo.key %>
           <div class="image-elements">
             <h5 style="color:#A8DDCE"><%= geek.offer.user.first_name %> <%= geek.offer.user.last_name %></h5>
@@ -19,10 +19,10 @@
       <% end %>
     </div>
     <div class="col-md-6">
-      <h2 style="color:#F0544F" class="text-center">My missions</h2>
+      <h2 class="mt-4 mt-md-0" style="color:#F0544F">My missions</h2>
       <% @my_missions.each do |mission| %>
         <% if mission.offer.user.id == current_user.id %>
-          <div class="card m-auto mb-3">
+          <div class="card mb-3">
             <div class="card-header">
               You will be working for
             </div>
