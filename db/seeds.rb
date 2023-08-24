@@ -69,7 +69,7 @@ puts "Creating offers..."
 Offer.create!(
   user_id: user_1.id,
   price: 780,
-  description: 'Experienced Ruby on Rails developer available for freelance projects in Lyon, France.',
+  description: "Are you in search of a skilled and passionate Ruby developer who can bring your web projects to life? Look no further! I'm a seasoned Ruby web developer with a strong track record of crafting robust and innovative web solutions.",
   title: 'Ruby on Rails Developer',
   date: "#{Date.today} to #{Date.today + 10}",
   experience: 5,

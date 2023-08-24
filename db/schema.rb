@@ -53,11 +53,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_24_121023) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "find_your_geeks", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "offers", force: :cascade do |t|
     t.integer "price"
     t.string "description"
