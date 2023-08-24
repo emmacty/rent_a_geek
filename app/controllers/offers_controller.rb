@@ -52,7 +52,6 @@ class OffersController < ApplicationController
     redirect_to offers_path, status: :see_other
   end
 
-
   def my_offers
     @my_offers = current_user.offers
   end
