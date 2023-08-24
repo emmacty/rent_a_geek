@@ -1,8 +1,13 @@
-<div class="container mt-md-5">
-  <h1 style="color:#F0544F" class="text-center">My bookings</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);">
+  <div class="container">
+    <h1 style="color: #F0544F; font-weight: bold;">My bookings</h1>
+    <h2 style="color: #A8DDCE; ">Browse all your reservations</h2>
+  </div>
+</div>
+<div class="container md-5">
   <div class="row">
     <div class="col-md-6">
-      <h2 style="color:#F0544F" class="text-center">My geeks</h2>
+      <h2 style="color:#F0544F" class="text-center p-0 my-3">My geeks</h2>
       <% @my_geeks.each do |geek| %>
         <div class="card m-auto mb-5" style="width: 18rem;">
           <%= cl_image_tag geek.offer.user.photo.key %>
@@ -11,15 +16,22 @@
             <p><%= geek.offer.title %></p>
             <p><%= geek.offer.description %></p>
             <p>Reserved for: <%= geek.offer.date %></p>
+            <% if geek.accepted %>
+              <p style="color: #A8DDCE;"><strong><i class="fa-solid fa-check" style="color: #A8DDCE;"></i> Accepted</strong></p>
               <%= link_to "Cancel this booking",
               booking_path(geek),
-              data: {turbo_method: :delete, turbo_confirm: "Delete this booking?"}, class:"btn btn-danger d-block"%>
+              data: {turbo_method: :delete, turbo_confirm: "Cancel this booking?"}, class:"btn btn-danger d-block"%>
+            <% elsif geek.declined %>
+              <p style="color: #FD1015;"><strong><i class="fa-solid fa-x" style="color: #FD1015;"></i> Declined</strong></p>
+            <% elsif geek.accepted == false %>%
+
+            <% end %>
           </div>
         </div>
       <% end %>
     </div>
     <div class="col-md-6">
-      <h2 style="color:#F0544F" class="text-center">My missions</h2>
+      <h2 style="color:#F0544F" class="text-center p-0 my-3">My missions</h2>
       <% @my_missions.each do |mission| %>
         <% if mission.offer.user.id == current_user.id %>
           <div class="card m-auto mb-3">
@@ -28,9 +40,16 @@
             </div>
             <div class="card-body">
               <h5 class="card-title" style="color:#A8DDCE"><%= mission.user.first_name %> <%= mission.user.last_name %></h5>
-              <p class="card-text">
-                On <%= mission.offer.date %>
-              </p>
+              <p class="card-text"> As <%= mission.offer.title %></p>
+              <p class="card-text"> On <%= mission.offer.date %></p>
+             <% if mission.accepted %>
+              <p style="color: #A8DDCE;"><strong><i class="fa-solid fa-check" style="color: #A8DDCE;"></i> Accepted</strong></p>
+            <% elsif mission.declined %>
+              <p style="color: #FD1015;"><strong><i class="fa-solid fa-x" style="color: #FD1015;"></i> Declined</strong></p>
+            <% else %>
+              <%= link_to "Accept", accept_booking_path(mission), class: "btn btn-danger" %>
+              <%= link_to "Decline", decline_booking_path(mission), data: {turbo_method: :get, turbo_confirm: "Decline this mission?"}, class: "btn btn-danger" %>
+            <% end %>
             </div>
           </div>
         <% end %>

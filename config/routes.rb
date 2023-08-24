@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     get 'my_offers', on: :collection
     resources :bookings, only: [:create]
     get 'create_booking', to: 'bookings#create_booking', as: 'create_booking'
-    get 'just_booked', to: 'bookings#just_booked', as: 'just_booked'
   end
   resources :bookings, only: [:index, :destroy]
+  get 'bookings/:id/accept', to: 'bookings#accept', as: 'accept_booking'
+  get 'bookings/:id/decline', to: 'bookings#decline', as: 'decline_booking'
 end
