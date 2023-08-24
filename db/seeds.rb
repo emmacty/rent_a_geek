@@ -71,10 +71,10 @@ Offer.create!(
   price: 780,
   description: 'Experienced Ruby on Rails developer available for freelance projects in Lyon, France.',
   title: 'Ruby on Rails Developer',
-  date: Date.today,
+  date: "#{Date.today} to #{Date.today + 10}",
   experience: 5,
   profession: 'Web Developer',
-  localisation: '2 rue Dupaty, Bordeaux, France',
+  localisation: '2 rue Dupaty, Bordeaux, France'
 )
 
 Offer.create!(
@@ -82,10 +82,10 @@ Offer.create!(
   price: 600,
   description: 'Skilled front-end developer seeking remote work opportunities.',
   title: 'Front-End Developer',
-  date: Date.today,
+  date: "#{Date.today} to #{Date.today + 15}",
   experience: 3,
   profession: 'Web Developer',
-  localisation: '3 rue de Macau, Bordeaux, France',
+  localisation: '3 rue de Macau, Bordeaux, France'
 )
 
 Offer.create!(
@@ -93,10 +93,10 @@ Offer.create!(
   price: 900,
   description: 'Backend developer with expertise in database design and optimization.',
   title: 'Backend Developer',
-  date: Date.today,
+  date: "#{Date.today} to #{Date.today + 8}",
   experience: 6,
   profession: 'Web Developer',
-  localisation: '4 rue des Girondins, Bordeaux, France',
+  localisation: '4 rue des Girondins, Bordeaux, France'
 )
 
 Offer.create!(
@@ -104,10 +104,10 @@ Offer.create!(
   price: 800,
   description: 'UI/UX designer passionate about creating user-friendly interfaces.',
   title: 'UI/UX Designer',
-  date: Date.today,
+  date: "#{Date.today} to #{Date.today + 3}",
   experience: 5,
   profession: 'Designer',
-  localisation: '5 rue André, Bordeaux, France',
+  localisation: '5 rue André, Bordeaux, France'
 )
 
 Offer.create!(
@@ -115,10 +115,10 @@ Offer.create!(
   price: 700,
   description: 'DevOps engineer specializing in automation and CI/CD pipelines.',
   title: 'DevOps Engineer',
-  date: Date.today,
+  date: "#{Date.today} to #{Date.today + 7}",
   experience: 7,
   profession: 'DevOps',
-  localisation: '8 rue Louis Mie, Bordeaux, France',
+  localisation: '8 rue Louis Mie, Bordeaux, France'
 )
 
 Offer.create!(
@@ -126,10 +126,10 @@ Offer.create!(
   price: 900,
   description: 'Guess what, everyone? I am proud to announce that I, Michael Scott, am a Rails developer extraordinaire! Just like the rails on a train, I m here to steer this coding journey to success. And remember, my code may not always be on track, but it s full of passion, creativity, and a touch of that signature Michael magic!',
   title: 'Developer rails ',
-  date: Date.today,
+  date: "#{Date.today} to #{Date.today + 5}",
   experience: 7,
   profession: 'Developer',
-  localisation: '8 rue Reignier, Bordeaux, France',
+  localisation: '8 rue Reignier, Bordeaux, France'
 )
 
 Offer.create!(
@@ -137,10 +137,10 @@ Offer.create!(
   price: 400,
   description: 'Fact: I am a seasoned Rails developer, much like a seasoned beet farmer. With my expertise, I sow the seeds of clean code, nurture efficient algorithms, and harvest bug-free applications. You can trust my code to be as reliable as my meticulously calculated Schrute Bucks conversion rates.',
   title: 'Developer professional and serious',
-  date: Date.today,
+  date: "#{Date.today} to #{Date.today + 20}",
   experience: 7,
   profession: 'Pro developer',
-  localisation: '8 rue Corot, Bordeaux, France',
+  localisation: '8 rue Corot, Bordeaux, France'
 )
 
 Offer.create!(
@@ -148,10 +148,10 @@ Offer.create!(
   price: 700,
   description: 'Hey, you know what s cool? Being a backend developer is like secretly pulling the strings behind the scenes, weaving the web of code like a ninja spider. I mean, who needs the spotlight when you can make the website run smoother than mom s homemade pie? And just like that pie, my coding is the hidden ingredient that makes everything deliciously functional!',
   title: 'Backend developer',
-  date: Date.today,
+  date: "#{Date.today} to #{Date.today + 17}",
   experience: 7,
   profession: 'Backend developer',
-  localisation: '2 rue Jean Descas, Bordeaux, France',
+  localisation: '2 rue Jean Descas, Bordeaux, France'
 )
 
 Offer.create!(
@@ -159,9 +159,9 @@ Offer.create!(
   price: 550,
   description: 'Sure thing! I m just a master at cookie disabling, a debugging ninja, and a copy-paste magician. My resume? Well, it s mostly a collection of misspelled commands and quick fixes that somehow turn into long-term solutions. I like to call it the subtle art of intuitive development',
   title: 'Dev',
-  date: Date.today,
+  date: "#{Date.today} to #{Date.today + 31}",
   experience: 7,
   profession: 'Dev',
-  localisation: '5 rue Pelleport, Bordeaux, France',
+  localisation: '5 rue Pelleport, Bordeaux, France'
 )
 puts "Finished!"
