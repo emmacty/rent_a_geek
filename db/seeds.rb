@@ -85,7 +85,7 @@ Offer.create!(
   date: "#{Date.today} to #{Date.today + 15}",
   experience: 3,
   profession: 'Web Developer',
-  localisation: '3 rue de Macau, Bordeaux, France'
+  localisation: '3 Rue De Macau, 33000 Bordeaux, France'
 )
 
 Offer.create!(
