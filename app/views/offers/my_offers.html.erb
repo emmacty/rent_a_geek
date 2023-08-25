@@ -19,13 +19,13 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body" style="padding-left: 20px;">
-                  <h5 class="card-title blue-text"><%= offer.title %></h5>
+                  <h5 class="card-title orange-text"><%= offer.title %></h5>
+                  <p class="card-text blue-text font-weight-bold"><%= offer.date %></p>
                   <p><%= offer.user.first_name %> <%= offer.user.last_name %></p>
                   <p><i class="fa-solid fa-location-dot"></i> <%= offer.localisation %></p>
                   <hr>
                   <p>Price per day: <%= offer.price %>€</p>
                   <p class="card-text"><%= offer.description %></p>
-                  <p class="card-text"><%= offer.date %></p>
                 </div>
               </div>
             </div>
