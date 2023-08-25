@@ -70,7 +70,7 @@ offer_1 = Offer.create!(
   user_id: user_1.id,
   price: 780,
   description: "Are you in search of a skilled and passionate Ruby developer who can bring your web projects to life? Look no further! I'm a seasoned Ruby web developer with a strong track record of crafting robust and innovative web solutions.",
-  title: 'Ruby on Rails Developer',
+  title: 'Full stack Developer',
   date: "#{Date.today} to #{Date.today + 10}",
   experience: 5,
   profession: 'Web Developer',
@@ -121,17 +121,6 @@ offer_6 = Offer.create!(
   localisation: '8 rue Louis Mie, 33000 Bordeaux, France'
 )
 
-offer_7 = Offer.create!(
-  user_id: user_7.id,
-  price: 900,
-  description: 'Guess what, everyone? I am proud to announce that I, Michael Scott, am a Rails developer extraordinaire! Just like the rails on a train, I m here to steer this coding journey to success. And remember, my code may not always be on track, but it s full of passion, creativity, and a touch of that signature Michael magic!',
-  title: 'Developer rails ',
-  date: "#{Date.today} to #{Date.today + 5}",
-  experience: 7,
-  profession: 'Developer',
-  localisation: '8 rue Reignier, 33100 Bordeaux, France'
-)
-
 offer_8 = Offer.create!(
   user_id: user_8.id,
   price: 400,
@@ -162,7 +151,7 @@ offer_10 = Offer.create!(
   date: "#{Date.today} to #{Date.today + 31}",
   experience: 7,
   profession: 'Dev',
-  localisation: '5 rue Pelleport, 33800 Bordeaux, France'
+  localisation: '2 Rue Sala, 69002, Lyon'
 )
 puts "Finished!"
 
@@ -201,13 +190,6 @@ Review.create!(
   rating: "⭐⭐⭐⭐⭐",
   comment: "Joris is great! Really profesionnal and easy to talk too. Nice experience!",
   offer_id: offer_6.id
-)
-
-Review.create!(
-  name: "Charles",
-  rating: "⭐",
-  comment: "I don't really recommend to work with Michael.",
-  offer_id: offer_7.id
 )
 
 Review.create!(

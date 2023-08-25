@@ -2,8 +2,8 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
-    @my_geeks = current_user.bookings
-    @my_missions = current_user.missions
+    @my_geeks = current_user.bookings.order(created_at: :desc)
+    @my_missions = current_user.missions.order(created_at: :desc)
   end
 
   def create_booking
