@@ -66,7 +66,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_081915) do
     t.bigint "user_id", null: false
     t.float "latitude"
     t.float "longitude"
-    t.boolean "accepted"
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
