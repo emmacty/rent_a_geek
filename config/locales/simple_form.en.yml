@@ -8,11 +8,11 @@ en:
     placeholders:
       offer:
         profession: 'Frontend Web Specialist'
-        experience: '5'
+        experience: 'exemple: 5'
         price: 'Choose your price'
         date: 'Select a date'
         description: 'Write your description'
-        title: 'Something'
+        title: 'Your offer'
 
 
       # You can uncomment the line below if you need to overwrite the whole required html.
