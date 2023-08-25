@@ -12,10 +12,10 @@
         <div class="card m-auto mb-5" style="width: 18rem;">
           <%= cl_image_tag geek.offer.user.photo.key %>
           <div class="image-elements">
-            <h5 class="orange-text"><%= geek.offer.user.first_name %> <%= geek.offer.user.last_name %></h5>
-            <p class="blue-text"><%= geek.offer.title %></p>
+            <h5 style="color:#A8DDCE"><%= geek.offer.user.first_name %> <%= geek.offer.user.last_name %></h5>
+            <p><%= geek.offer.title %></p>
             <p><%= geek.offer.description %></p>
-            <p class = "blue-text font-weight-bold">Reserved for: <%= geek.offer.date %></p>
+            <p>Reserved for: <%= geek.offer.date %></p>
             <% if geek.accepted %>
               <p style="color: #A8DDCE;"><strong><i class="fa-solid fa-check" style="color: #A8DDCE;"></i> Accepted</strong></p>
             <% elsif geek.declined %>
