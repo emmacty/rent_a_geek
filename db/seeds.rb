@@ -66,7 +66,7 @@ user_10.save
 
 puts "Users created"
 puts "Creating offers..."
-Offer.create!(
+offer_1 = Offer.create!(
   user_id: user_1.id,
   price: 780,
   description: "Are you in search of a skilled and passionate Ruby developer who can bring your web projects to life? Look no further! I'm a seasoned Ruby web developer with a strong track record of crafting robust and innovative web solutions.",
@@ -77,7 +77,7 @@ Offer.create!(
   localisation: '2 rue Dupaty, Bordeaux, France'
 )
 
-Offer.create!(
+offer_2 = Offer.create!(
   user_id: user_2.id,
   price: 850,
   description: 'Skilled front-end developer seeking remote work opportunities.',
@@ -88,7 +88,7 @@ Offer.create!(
   localisation: '3 Rue De Macau, 33000 Bordeaux, France'
 )
 
-Offer.create!(
+offer_3 = Offer.create!(
   user_id: user_3.id,
   price: 900,
   description: 'Backend developer with expertise in database design and optimization.',
@@ -99,7 +99,7 @@ Offer.create!(
   localisation: '4 rue des Girondins, Bordeaux, France'
 )
 
-Offer.create!(
+offer_5 = Offer.create!(
   user_id: user_5.id,
   price: 800,
   description: 'UI/UX designer passionate about creating user-friendly interfaces.',
@@ -110,7 +110,7 @@ Offer.create!(
   localisation: '5 rue André, Bordeaux, France'
 )
 
-Offer.create!(
+offer_6 = Offer.create!(
   user_id: user_6.id,
   price: 700,
   description: 'DevOps engineer specializing in automation and CI/CD pipelines.',
@@ -121,7 +121,7 @@ Offer.create!(
   localisation: '8 rue Louis Mie, Bordeaux, France'
 )
 
-Offer.create!(
+offer_7 = Offer.create!(
   user_id: user_7.id,
   price: 900,
   description: 'Guess what, everyone? I am proud to announce that I, Michael Scott, am a Rails developer extraordinaire! Just like the rails on a train, I m here to steer this coding journey to success. And remember, my code may not always be on track, but it s full of passion, creativity, and a touch of that signature Michael magic!',
@@ -132,7 +132,7 @@ Offer.create!(
   localisation: '8 rue Reignier, Bordeaux, France'
 )
 
-Offer.create!(
+offer_8 = Offer.create!(
   user_id: user_8.id,
   price: 400,
   description: 'Fact: I am a seasoned Rails developer, much like a seasoned beet farmer. With my expertise, I sow the seeds of clean code, nurture efficient algorithms, and harvest bug-free applications. You can trust my code to be as reliable as my meticulously calculated Schrute Bucks conversion rates.',
@@ -143,7 +143,7 @@ Offer.create!(
   localisation: '8 rue Corot, Bordeaux, France'
 )
 
-Offer.create!(
+offer_9 = Offer.create!(
   user_id: user_9.id,
   price: 700,
   description: 'Hey, you know what s cool? Being a backend developer is like secretly pulling the strings behind the scenes, weaving the web of code like a ninja spider. I mean, who needs the spotlight when you can make the website run smoother than mom s homemade pie? And just like that pie, my coding is the hidden ingredient that makes everything deliciously functional!',
@@ -154,7 +154,7 @@ Offer.create!(
   localisation: '2 rue Jean Descas, Bordeaux, France'
 )
 
-Offer.create!(
+offer_10 = Offer.create!(
   user_id: user_10.id,
   price: 550,
   description: 'Sure thing! I m just a master at cookie disabling, a debugging ninja, and a copy-paste magician. My resume? Well, it s mostly a collection of misspelled commands and quick fixes that somehow turn into long-term solutions. I like to call it the subtle art of intuitive development',
@@ -165,3 +165,70 @@ Offer.create!(
   localisation: '5 rue Pelleport, Bordeaux, France'
 )
 puts "Finished!"
+
+puts "Creating reviews..."
+
+Review.create!(
+  name: "John",
+  rating: "⭐⭐⭐⭐⭐",
+  comment: "I really enjoyed working with Maïwenn, she's really professionnal!",
+  offer_id: offer_1.id
+)
+
+Review.create!(
+  name: "Lisa",
+  rating: "⭐⭐⭐⭐⭐",
+  comment: "Working with Andy was a pleasure, I really recommend him.",
+  offer_id: offer_2.id
+)
+
+Review.create!(
+  name: "Alice",
+  rating: "⭐⭐⭐⭐⭐",
+  comment: "Great experience with Victoria, it was very nice to work with her. Good communication and technical skills.",
+  offer_id: offer_3.id
+)
+
+Review.create!(
+  name: "Tom",
+  rating: "⭐⭐⭐⭐⭐",
+  comment: "Laura is great. Really enjoyed working with her. Would recommend 100%!",
+  offer_id: offer_5.id
+)
+
+Review.create!(
+  name: "Charles",
+  rating: "⭐⭐⭐⭐⭐",
+  comment: "Joris is great! Really profesionnal and easy to talk too. Nice experience!",
+  offer_id: offer_6.id
+)
+
+Review.create!(
+  name: "Charles",
+  rating: "⭐",
+  comment: "I don't really recommend to work with Michael.",
+  offer_id: offer_7.id
+)
+
+Review.create!(
+  name: "Charles",
+  rating: "⭐⭐⭐⭐",
+  comment: "Nice experience with Dwight!",
+  offer_id: offer_8.id
+)
+
+Review.create!(
+  name: "Tina",
+  rating: "⭐⭐⭐⭐⭐",
+  comment: "Dewey is the best!",
+  offer_id: offer_9.id
+)
+
+Review.create!(
+  name: "Joey",
+  rating: "⭐⭐⭐⭐⭐",
+  comment: "I really enjoyed working with my bro Chandler!",
+  offer_id: offer_10.id
+)
+
+puts "Reviews created!"

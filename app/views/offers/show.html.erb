@@ -2,14 +2,21 @@
   <div class="row d-flex align-items-start">
     <div class="col-md-4">
       <!-- Photo on the left -->
-      <div class="bg-white pt-3 px-3 pb-5 shadow rounded border border-light">
+      <div class="bg-white pt-3 px-3 pb-5 shadow rounded border border-gray-800">
         <img src="<%= cl_image_path(@offer.user.photo.key, height: 600, width: 500, crop: :fill) %>" alt="User Photo" class="img-fluid rounded">
       </div>
-      <div class="bg-white shadow rounded border border-light mt-3 p-3">
-        <h2>Reviews</h2>
-        <p>I love this developper!</p>
-      </div>
-
+      <% if @offer.reviews.present? %>
+        <div class="bg-white shadow rounded border border-gray-800 mt-3 p-3">
+          <h2 class="blue-text">Reviews</h2>
+            <% @offer.reviews.each do |review| %>
+            <div class="d-flex justify-content-between">
+              <p><strong><%= review.name %></strong></p>
+              <p><%= review.rating %></p>
+            </div>
+            <p><%= review.comment %></p>
+            <% end %>
+        </div>
+       <% end %>
     </div>
 
     <div class="col-md-8">

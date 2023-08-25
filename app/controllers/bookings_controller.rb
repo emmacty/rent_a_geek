@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.accepted = true
     @booking.save
-    flash[:alert] = "Congrats, you accepted a new mission! 🎉"
+    flash[:notice] = "Congrats, you accepted a new mission! 🎉"
     redirect_to bookings_path
   end
 
