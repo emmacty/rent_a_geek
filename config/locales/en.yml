@@ -31,7 +31,3 @@
 
 en:
   hello: "Hello world"
-
-  placeholder:
-      offer:
-        localisation: 'Something'
