@@ -35,7 +35,7 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: black;
+  color: #A8DDCE;
 }
 
 a:hover {
@@ -44,4 +44,17 @@ a:hover {
 
 .home_logo {
   margin-bottom: 0;
+}
+
+.dropdown-menu {
+  border-radius: 5px;
+}
+
+.dropdown-item {
+  color: #A8DDCE;
+}
+
+.dropdown-item:hover {
+  background-color: #A8DDCE;
+  color: #F0544F;
 }

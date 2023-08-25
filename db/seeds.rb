@@ -74,13 +74,13 @@ offer_1 = Offer.create!(
   date: "#{Date.today} to #{Date.today + 10}",
   experience: 5,
   profession: 'Web Developer',
-  localisation: '2 rue Dupaty, Bordeaux, France'
+  localisation: '2 rue Dupaty,33300 Bordeaux, France'
 )
 
 offer_2 = Offer.create!(
   user_id: user_2.id,
   price: 850,
-  description: 'Skilled front-end developer seeking remote work opportunities.',
+  description: 'Experienced Front-End Developer with a passion for crafting visually appealing and user-centric web experiences. Proficient in translating design concepts into pixel-perfect, responsive interfaces using HTML, CSS, and JavaScript. Skilled in collaborating with cross-functional teams to implement intuitive and engaging user interfaces.',
   title: 'Front-End Developer',
   date: "#{Date.today} to #{Date.today + 15}",
   experience: 3,
@@ -91,34 +91,34 @@ offer_2 = Offer.create!(
 offer_3 = Offer.create!(
   user_id: user_3.id,
   price: 900,
-  description: 'Backend developer with expertise in database design and optimization.',
+  description: 'Seasoned Backend Developer with a strong foundation in designing, implementing, and maintaining robust server-side applications and databases. Proficient in a variety of programming languages, including but not limited to Python, Java, and Ruby, with a focus on scalability and performance optimization. Adept at crafting secure and efficient APIs, integrating third-party services, and collaborating with front-end teams to deliver seamless end-to-end solutions',
   title: 'Backend Developer',
   date: "#{Date.today} to #{Date.today + 8}",
   experience: 6,
   profession: 'Web Developer',
-  localisation: '4 rue des Girondins, Bordeaux, France'
+  localisation: '4 rue des Girondins, 33200 Bordeaux, France'
 )
 
 offer_5 = Offer.create!(
   user_id: user_5.id,
   price: 800,
-  description: 'UI/UX designer passionate about creating user-friendly interfaces.',
+  description: 'Creative UI/UX Designer dedicated to crafting elegant and intuitive digital experiences that blend user needs with business objectives. Proficient in wireframing, prototyping, and creating visually stunning interfaces that resonate with target audiences. Skilled at conducting user research to inform design decisions, iterating based on feedback, and collaborating seamlessly with cross-functional teams',
   title: 'UI/UX Designer',
   date: "#{Date.today} to #{Date.today + 3}",
   experience: 5,
   profession: 'Designer',
-  localisation: '5 rue André, Bordeaux, France'
+  localisation: '5 rue André, 33200 Bordeaux, France'
 )
 
 offer_6 = Offer.create!(
   user_id: user_6.id,
   price: 700,
-  description: 'DevOps engineer specializing in automation and CI/CD pipelines.',
+  description: 'Experienced DevOps Engineer adept at optimizing development and operational workflows to enhance software delivery and reliability. Skilled in automating deployment pipelines, infrastructure provisioning, and configuration management using tools like Docker, Kubernetes, and Jenkins. Proficient in cloud platforms such as AWS, Azure, or GCP, with a focus on creating scalable and resilient systems',
   title: 'DevOps Engineer',
   date: "#{Date.today} to #{Date.today + 7}",
   experience: 7,
   profession: 'DevOps',
-  localisation: '8 rue Louis Mie, Bordeaux, France'
+  localisation: '8 rue Louis Mie, 33000 Bordeaux, France'
 )
 
 offer_7 = Offer.create!(
@@ -129,7 +129,7 @@ offer_7 = Offer.create!(
   date: "#{Date.today} to #{Date.today + 5}",
   experience: 7,
   profession: 'Developer',
-  localisation: '8 rue Reignier, Bordeaux, France'
+  localisation: '8 rue Reignier, 33100 Bordeaux, France'
 )
 
 offer_8 = Offer.create!(
@@ -140,7 +140,7 @@ offer_8 = Offer.create!(
   date: "#{Date.today} to #{Date.today + 20}",
   experience: 7,
   profession: 'Pro developer',
-  localisation: '8 rue Corot, Bordeaux, France'
+  localisation: '8 rue Corot, 33100 Bordeaux, France'
 )
 
 offer_9 = Offer.create!(
@@ -151,7 +151,7 @@ offer_9 = Offer.create!(
   date: "#{Date.today} to #{Date.today + 17}",
   experience: 7,
   profession: 'Backend developer',
-  localisation: '2 rue Jean Descas, Bordeaux, France'
+  localisation: '2 rue Jean Descas, 33800 Bordeaux, France'
 )
 
 offer_10 = Offer.create!(
@@ -162,7 +162,7 @@ offer_10 = Offer.create!(
   date: "#{Date.today} to #{Date.today + 31}",
   experience: 7,
   profession: 'Dev',
-  localisation: '5 rue Pelleport, Bordeaux, France'
+  localisation: '5 rue Pelleport, 33800 Bordeaux, France'
 )
 puts "Finished!"
 
