@@ -23,7 +23,6 @@
               <%= link_to "Delete this booking",
               booking_path(geek),
               data: {turbo_method: :delete, turbo_confirm: "Delete this booking?"}, class:"btn btn-danger d-block"%>
-            <% elsif geek.declined %>
             <% elsif geek.accepted == false %>
               <%= link_to "Cancel this booking",
               booking_path(geek),
