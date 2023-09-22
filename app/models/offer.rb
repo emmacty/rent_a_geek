@@ -2,14 +2,12 @@ class Offer < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  validates :price, presence: true
-  validates :description, presence: true, length: { minimum: 5, maximum: 5000 }
+  validates :price_per_day, presence: true
+  validates :brand, presence: true
   validates :user_id, presence: true
-  validates :title, presence: true
   validates :date, presence: true
   validates :localisation, presence: true
   validates :profession, presence: true
-  validates :experience, presence: true
   geocoded_by :localisation
   after_validation :geocode, if: :will_save_change_to_localisation?
   include PgSearch::Model

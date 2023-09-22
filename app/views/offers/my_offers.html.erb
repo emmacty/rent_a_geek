@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);">
   <div class="container">
-    <h1 style="color: #F0544F; font-weight: bold;">My offers</h1>
-    <h2 style="color: #A8DDCE;">Browse all your offers</h2>
+    <h1 style="color: #F0544F; font-weight: bold;">Mes offres</h1>
+    <h2 style="color: #A8DDCE;">Retrouvez toutes vos offres</h2>
   </div>
 </div>
 
@@ -21,16 +21,16 @@
                 <div class="card-body" style="padding-left: 20px;">
                   <h5 class="card-title orange-text"><%= offer.title %></h5>
                   <p class="card-text blue-text font-weight-bold"><%= offer.date %></p>
-                  <p><%= offer.user.first_name %> <%= offer.user.last_name %></p>
+                  <p><%= offer.model %> <%= offer.brand %></p>
                   <p><i class="fa-solid fa-location-dot"></i> <%= offer.localisation %></p>
                   <hr>
-                  <p>Price per day: <%= offer.price %>€</p>
+                  <p>Price per day: <%= offer.price_per_day %>€</p>
                   <p class="card-text"><%= offer.description %></p>
                 </div>
               </div>
             </div>
           </div>
-          <%= link_to "View offer", offer_path(offer), class: "btn btn-sm btn-danger d-block mt-2" %>
+          <%= link_to "Voir cette offre", offer_path(offer), class: "btn btn-sm btn-danger d-block mt-2" %>
         </div>
       <% end %>
     </div>

@@ -1,21 +1,21 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);">
   <div class="container">
-    <h1 style="color: #F0544F; font-weight: bold;">My bookings</h1>
-    <h2 style="color: #A8DDCE; ">Browse all your reservations</h2>
+    <h1 style="color: #F0544F; font-weight: bold;">Mes réservation</h1>
+    <h2 style="color: #A8DDCE; ">Accéder à vos réservations</h2>
   </div>
 </div>
 <div class="container md-5">
   <div class="row">
     <div class="col-md-6">
-      <h2 style="color:#F0544F" class="text-center p-0 my-3">My geeks</h2>
+      <h2 style="color:#F0544F" class="text-center p-0 my-3">Mes demandes</h2>
       <% @my_geeks.each do |geek| %>
         <div class="card m-auto mb-5" style="width: 18rem;">
           <%= cl_image_tag geek.offer.user.photo.key %>
           <div class="image-elements">
-            <h5 style="color:#A8DDCE"><%= geek.offer.user.first_name %> <%= geek.offer.user.last_name %></h5>
+            <h5 style="color:#A8DDCE"><%= geek.offer.model %> <%= geek.offer.brand %></h5>
             <p><%= geek.offer.title %></p>
             <p><%= geek.offer.description %></p>
-            <p>Reserved for: <%= geek.offer.date %></p>
+            <p>Reservée pour le: <%= geek.offer.date %></p>
             <% if geek.accepted %>
               <p style="color: #A8DDCE;"><strong><i class="fa-solid fa-check" style="color: #A8DDCE;"></i> Accepted</strong></p>
             <% elsif geek.declined %>
@@ -33,17 +33,17 @@
       <% end %>
     </div>
     <div class="col-md-6">
-      <h2 style="color:#F0544F" class="text-center p-0 my-3">My missions</h2>
+      <h2 style="color:#F0544F" class="text-center p-0 my-3">Mes offres</h2>
       <% @my_missions.each do |mission| %>
         <% if mission.offer.user.id == current_user.id %>
           <div class="card m-auto mb-3">
             <div class="card-header">
-              You will be working for
+              Vous avez une demande pour
             </div>
             <div class="card-body">
               <h5 class="card-title" style="color:#A8DDCE"><%= mission.user.first_name %> <%= mission.user.last_name %></h5>
-              <p class="card-text"> As <%= mission.offer.title %></p>
-              <p class="card-text"> On <%= mission.offer.date %></p>
+              <p class="card-text"> Marque <%= mission.offer.model %></p>
+              <p class="card-text"> Du <%= mission.offer.date %></p>
              <% if mission.accepted %>
               <p style="color: #A8DDCE;"><strong><i class="fa-solid fa-check" style="color: #A8DDCE;"></i> Accepted</strong></p>
             <% elsif mission.declined %>

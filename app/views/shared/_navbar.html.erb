@@ -2,13 +2,13 @@
   <div class="container-fluid">
     <div class="navbar-left">
       <%= link_to "/" do %>
-        <p class="home_logo"><%= image_tag "final_home_design.png", width: 110%> <%= image_tag "new_logo_geek.png", width: 30%></p>
+        <p class="home_logo"><%= image_tag "logo.png", width: 70%></p>
       <% end %>
     </div>
     <div class="navbar-center">
       <ul class="navbar-nav me-auto">
         <li class="nav-item center-text">
-          <%= image_tag "final_logo_design.png" %>
+          <h1>Rent car challenge</h1>
         </li>
       </ul>
     </div>
@@ -16,26 +16,26 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Log out", "/users/sign_out", class: "nav-link", data: {turbo_method: :delete} %>
+            <%= link_to " Déconnexion", "/users/sign_out", class: "nav-link", data: {turbo_method: :delete} %>
           </li>
           <li class ="nav-item dropdown">
           <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, class: "avatar dropdown-togfle", id:"navbarDropdown", data: { bs_toggle:"dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%=link_to "My bookings", "/bookings", class: "dropdown-item" %>
-            <%=link_to "My offers", my_offers_offers_path, class: "dropdown-item" %>
+            <%=link_to "Mes réservations", "/bookings", class: "dropdown-item" %>
+            <%=link_to "Mes offres", my_offers_offers_path, class: "dropdown-item" %>
           </div>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Create an account", new_user_registration_path, class: "nav-link" %>
+            <%= link_to "Créer un compte", new_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Action</a>
-              <%= link_to "My bookings", "/bookings", class: "nav-link" %>
+              <%= link_to "Mes réservations", "/bookings", class: "nav-link" %>
               <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
             </div>
           </li>
